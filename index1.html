@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <Head>
+        <style>
+            body {background-color:silver;}
+            table {color: blue; border-style: solid; width: 50%;}
+            h1 {font-style: italic;}
+            th.abc {color: black;}
+            td.xyz {color:black;}
+            body {margin-left: 100px ; margin-right: 100px;}
+            button.wi {width: 40%;}
+            input.ABC {align-self: center;}
+            </style>        
+        <title>Todo App</title>
+    </Head>
+    <body onload='loadData()'>
+        <h1><u>To-Do Task Application</u></h1>
+            <input class='ABC' type="text" name="content" id="content1" size='47'>
+            <input type="button" value="Add Task" id = 'btn' onclick='add()'><br>
+            <input type='hidden' name='id1' id='id'><br>
+            <input type='button' value='Ascending' id = 'b2' onclick='ascendingdata()'>
+            <input type='button' value='Descending' id = 'b3' onclick='descendingdata()'><br>
+            <!-- <input type='button' value='Today' id='b4' onclick='todaydata()'> -->
+             
+ <br>   
+    <table id='data' border = 2></table>
+    <script src="main1.js"> </script>
+</body>
+</html>
+
+

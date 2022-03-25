@@ -1,0 +1,51 @@
+<html>
+<head>
+<style>
+body {background-color:cornflowerblue;}
+table {color: yellow; border-style: solid; margin: auto; width: 50%;}
+h1 {font-style: italic; margin-left: 190px; }
+th.abc {color: black;}
+td.xyz {color:black;}
+body {margin-left: 100px ; margin-right: 100px;}
+button.wi {width: 40%;}
+input.ABC {margin-left: 190px;}
+</style>
+</head>
+<body>
+    <h1><u>To-Do Task Application</u></h1>
+    <form action="/todo" method="POST">
+        <input class='ABC' type="text" name="content" id="content1" size='47' required>
+        <input type="submit" value="Add Task">
+    </form><br>
+
+<table id='data' border = 2>
+    <tr>
+        <th class="abc">ID</th>
+        <th class="abc">Task</th>
+        <th class="abc">Actions</th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td class="xyz">{{ task.id }}</td>
+        <td class="xyz">{{ task.content }}</td>
+        <td class="xyz">
+            <a href="update/{{task.id}}"><button class='wi'type='button'>Update</button></a>
+            <a href="delete/{{task.id}}"><button class='wi'type='button' onclick="confirmAction()">Delete</button></a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<script>function confirmAction(){
+    let confirmAction = confirm("Are you sure you want to permanently delete this task ?");
+    if (confirmAction){
+        confirm("Successfully Deleted");
+    }
+    else {
+        confirm("action Cancelled");
+    }
+    }</script>
+
+</body>
+</html>
+
+
